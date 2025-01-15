@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  workspace:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    environment:
+      PYTHONPATH: /workspace
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    volumes:
+      - ..:/workspace
+    command: sleep infinity
